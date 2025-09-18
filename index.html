@@ -1,129 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafetería - Facturación y Membresía</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f8f8;
-            color: #333;
-        }
-        header {
-            background: #5c3d2e;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            background: #3e2723;
-            padding: 0.5rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 2rem;
-            background: white;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #5c3d2e;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            margin-top: 30px;
-            background: #5c3d2e;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafetería Monkey - Sistema de Gestión</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>☕ Cafetería Monkey</h1>
-        <p>Modulos de Facturación y Membresía</p>
-    </header>
+  <!-- Encabezado hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>☕ Cafetería Monkey</h1>
+      <p>Un sistema digital con modulos completos , en este caso para facturación y membresías</p>
+      <a href="#subsistemas" class="btn btn-hero">Explorar módulos</a>
+    </div>
+  </header>
 
-    <nav>
-        <a href="#facturacion">Facturación</a>
-        <a href="#membresia">Membresía</a>
-    </nav>
-
-    <section id="facturacion">
-        <h2> Módulo de Facturación</h2>
+  <main>
+    <!-- Intro -->
+    <section class="alt-section">
+      <div class="text">
+        <h2>📌 Cafetería</h2>
         <p>
-            El módulo de facturación es capaz de registrar nuevas facturas con su folio, fecha, descripción, cantidad, importe, impuestos, monto total y método de pago.  
-            Además, permite consultar facturas por cliente o fechas, actualizar información en caso de error y eliminar facturas cuando deban cancelarse.
+          El Sistema de Cafetería está diseñado para administrar 
+          de manera eficiente las áreas clave del negocio, comenzando con 
+          <strong>Facturación</strong> y <strong>Membresía</strong>.
         </p>
-
-        <h3>Campos principales</h3>
-        <table>
-            <tr><th>Campo</th><th>Ejemplo</th><th>Descripción</th></tr>
-            <tr><td>ID_Factura</td><td>Entero</td><td>Identificador único de la factura.</td></tr>
-            <tr><td>Folio</td><td>F000123</td><td>Número consecutivo para control fiscal.</td></tr>
-            <tr><td>Fecha</td><td>2025-09-04</td><td>Fecha de emisión.</td></tr>
-            <tr><td>Descripción</td><td>3 cafés latte y 2 croissants</td><td>Concepto de la venta.</td></tr>
-            <tr><td>Cantidad</td><td>5</td><td>Número total de productos facturados.</td></tr>
-            <tr><td>Importe</td><td>$300.00</td><td>Subtotal sin impuestos.</td></tr>
-            <tr><td>Impuestos</td><td>$48.00</td><td>IVA u otros impuestos aplicados.</td></tr>
-            <tr><td>Monto_Total</td><td>$348.00</td><td>Total a pagar con impuestos incluidos.</td></tr>
-            <tr><td>Método_Pago</td><td>Efectivo / Tarjeta</td><td>Forma de pago.</td></tr>
-            <tr><td>ID_Cliente</td><td>Entero</td><td>Relación con el cliente que pidió la factura.</td></tr>
-        </table>
+      </div>
+      <div class="image">
+        <img src="images/cafeteria.jpg" alt="Cafetería moderna">
+      </div>
     </section>
 
-    <section id="membresia">
-        <h2> Módulo de Membresía</h2>
+    <!-- Problemática -->
+    <section class="alt-section reverse">
+      <div class="text">
+        <h2>⚠️ Problemática</h2>
         <p>
-            El módulo de membresía es capaz de registrar nuevas membresías para clientes, consultar membresías activas o inactivas, actualizar su tipo, beneficios, fechas de vencimiento y pagos.  
-            Además, permite registrar la fecha de última actividad, llevar un historial de pagos y eliminar membresías cuando un cliente da de baja el servicio.
+          La gestión manual de pedidos, pagos y membresías 
+          genera retrasos y dificulta el control del inventario 
+          y la atención al cliente.  
+          Nuestro sistema busca resolver esto con un enfoque digital.
         </p>
-
-        <h3>Campos principales</h3>
-        <table>
-            <tr><th>Campo</th><th>Ejemplo</th><th>Descripción</th></tr>
-            <tr><td>ID_Membresía</td><td>Entero</td><td>Identificador único de la membresía.</td></tr>
-            <tr><td>Tipo_Membresía</td><td>Mensual / VIP / Estudiante</td><td>Clasificación de la membresía.</td></tr>
-            <tr><td>Fecha_Inicio</td><td>2025-09-01</td><td>Inicio de vigencia.</td></tr>
-            <tr><td>Fecha_Vencimiento</td><td>2025-09-30</td><td>Fecha de expiración.</td></tr>
-            <tr><td>Estado</td><td>Activa / Expirada / Suspendida</td><td>Estatus actual.</td></tr>
-            <tr><td>Fecha_Ultima_Actividad</td><td>2025-09-04</td><td>Última vez que el cliente usó su membresía.</td></tr>
-            <tr><td>Historial_Pagos</td><td>Pago 01/09/2025: $200.00</td><td>Registro de los pagos de la membresía.</td></tr>
-            <tr><td>Beneficios</td><td>10% descuento, café gratis al mes</td><td>Detalle de ventajas.</td></tr>
-            <tr><td>ID_Cliente</td><td>Entero</td><td>Relación con cliente.</td></tr>
-        </table>
+      </div>
+      <div class="image">
+        <img src="images/problematicas.jpeg" alt="Problemática">
+      </div>
     </section>
 
-    <footer>
-        <p>© 2025 Cafetería Monkey - Todos los derechos reservados</p>
-    </footer>
+    <!-- Objetivo -->
+    <section class="alt-section">
+      <div class="text">
+        <h2>🎯 Objetivo</h2>
+        <p>
+          Sistematizar los procesos de facturación y membresía, 
+          optimizando la gestión de clientes, pagos y renovaciones.  
+          Así, la cafetería podrá tomar decisiones más informadas y rápidas.
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/objetivo.jpg" alt="Objetivo">
+      </div>
+    </section>
+
+    <!-- Subsistemas -->
+    <section id="subsistemas" class="subsistemas">
+      <h2>🗂️ Mis módulos</h2>
+      <p>Selecciona un módulo para conocer sus funciones:</p>
+      <div class="cards">
+        <!-- Facturación -->
+        <div class="card">
+          <img src="images/facturacion.jpg" alt="Facturación">
+          <h3>📄 Facturación</h3>
+          <p>Gestión de facturas, pagos y control de ventas.</p>
+          <a href="facturacion.html" class="btn">Ver más</a>
+        </div>
+
+        <!-- Membresía -->
+        <div class="card">
+          <img src="images/membresia.png" alt="Membresía">
+          <h3>🎟️ Membresía</h3>
+          <p>Registro, beneficios y control de membresías de clientes.</p>
+          <a href="membresia.html" class="btn">Ver más</a>
+        </div>
+
+        <!-- Modelo Relacional -->
+        <div class="card">
+          <img src="images/modelorelacionalpro.jpeg" alt="Modelo Relacional">
+          <h3>📊 Modelo Relacional</h3>
+          <p>Visualización de las tablas y relaciones entre Facturación y Membresía.</p>
+          <a href="index-modelo.html" class="btn">Ver modelo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Imagen de módulos -->
+    <section class="diagram">
+      <h2>📊 Módulos completos del sistema</h2>
+      <img src="images/Modulos.jpeg" alt="Todos los módulos">
+    </section>
+
+    <!-- Miembros -->
+    <section class="miembros">
+      <h2>👥 Miembros del proyecto</h2>
+      <div class="miembros-grid">
+        <div class="miembro">
+          <img src="images/chicadios.jpeg" alt="Xavier Amed Guerrero Hernández">
+          <h4>Nombre 1</h4>
+        </div>
+        <div class="miembro">
+          <img src="img/user2.png" alt="Integrante 2">
+          <h4>Nombre 2</h4>
+        </div>
+        <div class="miembro">
+          <img src="img/user3.png" alt="Integrante 3">
+          <h4>Nombre 3</h4>
+        </div>
+        <div class="miembro">
+          <img src="img/user4.png" alt="Integrante 4">
+          <h4>Nombre 4</h4>
+        </div>
+        <div class="miembro">
+          <img src="img/user5.png" alt="Integrante 5">
+          <h4>Nombre 5</h4>
+        </div>
+        <div class="miembro">
+          <img src="img/user6.png" alt="Integrante 6">
+          <h4>Nombre 6</h4>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Cafetería Monkey | Proyecto académico</p>
+  </footer>
 </body>
 </html>

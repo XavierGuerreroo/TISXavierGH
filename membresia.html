@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membresía - Cafetería Monkey</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🎫 Subsistema: Membresía</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Descripción</h2>
+      <p>
+        El subsistema de <strong>Membresía</strong> permite gestionar los planes 
+        de membresía de los clientes, controlando fechas de vigencia, beneficios 
+        y pagos asociados.
+      </p>
+    </section>
+
+    <section>
+      <h2>Usuarios del subsistema</h2>
+      <ul>
+        <li><strong>Cliente</strong></li>
+        <li><strong>Propietario</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Requerimientos por usuario</h2>
+      <h3>Cliente</h3>
+      <ul>
+        <li>Registrarse en un plan de membresía.</li>
+        <li>Consultar estado de la membresía (Activa, Expirada, Suspendida).</li>
+        <li>Ver fechas de inicio y vencimiento.</li>
+        <li>Consultar historial de pagos.</li>
+        <li>Conocer beneficios asociados.</li>
+        <li>Dar de baja su membresía.</li>
+      </ul>
+      <h3>Propietario</h3>
+      <ul>
+        <li>Registrar nuevas membresías.</li>
+        <li>Consultar membresías activas, vencidas o suspendidas.</li>
+        <li>Actualizar tipo, beneficios, fechas o estado de la membresía.</li>
+        <li>Registrar fecha de última actividad de un cliente.</li>
+        <li>Eliminar membresías dadas de baja.</li>
+        <li>Generar reportes de membresías y clientes activos.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formulario - Crear Membresía</h2>
+      <form>
+        <label>Nombre del Cliente: <input type="text"></label><br>
+        <label>Correo: <input type="email"></label><br>
+        <label>Tipo de Membresía:
+          <select>
+            <option>Mensual</option>
+            <option>VIP</option>
+            <option>Estudiante</option>
+          </select>
+        </label><br>
+        <label>Fecha de Inicio: <input type="date"></label><br>
+        <label>Fecha de Vencimiento: <input type="date"></label><br>
+        <label>Beneficios: <input type="text"></label><br>
+        <button type="submit">Crear Membresía</button>
+        <a href="index.html" class="btn-back">Volver</a>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+
+<section class="campos">
+  <h2>🎟️ Campos de Membresía</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo / Ejemplo</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ID_Membresía</td><td>Entero</td><td>Identificador único de la membresía.</td></tr>
+      <tr><td>Tipo_Membresía</td><td>"Mensual", "VIP", "Estudiante"</td><td>Clasificación de la membresía.</td></tr>
+      <tr><td>Fecha_Inicio</td><td>"2025-09-01"</td><td>Inicio de vigencia.</td></tr>
+      <tr><td>Fecha_Vencimiento</td><td>"2025-09-30"</td><td>Fecha de expiración.</td></tr>
+      <tr><td>Estado</td><td>"Activa", "Expirada", "Suspendida"</td><td>Estatus actual.</td></tr>
+      <tr><td>Fecha_Ultima_Actividad</td><td>"2025-09-04"</td><td>Última vez que el cliente usó su membresía.</td></tr>
+      <tr><td>Historial_Pagos</td><td>"Pago 01/09/2025: $200.00"</td><td>Registro de los pagos de la membresía.</td></tr>
+      <tr><td>Beneficios</td><td>"10% descuento, café gratis al mes"</td><td>Detalle de ventajas.</td></tr>
+      <tr><td>ID_Cliente</td><td>(Relación)</td><td>Relación con cliente.</td></tr>
+    </tbody>
+  </table>
+</section>

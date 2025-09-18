@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturación - Cafetería Monkey</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📄 Subsistema: Facturación</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Descripción</h2>
+      <p>
+        El subsistema de <strong>Facturación</strong> permite registrar, consultar, 
+        actualizar y eliminar facturas de las ventas realizadas, garantizando un control 
+        fiscal y administrativo eficiente.
+      </p>
+    </section>
+
+    <section>
+      <h2>Usuarios del subsistema</h2>
+      <ul>
+        <li><strong>Cliente</strong></li>
+        <li><strong>Propietario</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Requerimientos por usuario</h2>
+      <h3>Cliente</h3>
+      <ul>
+        <li>Consultar sus facturas emitidas.</li>
+        <li>Descargar facturas en formato digital (PDF/XML).</li>
+        <li>Ver método de pago de cada factura.</li>
+        <li>Solicitar correcciones en caso de error.</li>
+      </ul>
+      <h3>Propietario</h3>
+      <ul>
+        <li>Registrar nuevas facturas.</li>
+        <li>Consultar facturas por cliente o rango de fechas.</li>
+        <li>Actualizar información en caso de errores.</li>
+        <li>Cancelar facturas cuando sea necesario.</li>
+        <li>Generar reportes de facturación por periodo.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formulario - Crear Factura</h2>
+      <form>
+        <label>Nombre del Cliente: <input type="text" required></label><br>
+        <label>Correo: <input type="email" required></label><br>
+        <label>Descripción: <input type="text" required></label><br>
+        <label>Cantidad: <input type="number" required></label><br>
+        <label>Importe: <input type="number" step="0.01" required></label><br>
+        <label>Método de pago:
+          <select>
+            <option>Efectivo</option>
+            <option>Tarjeta</option>
+          </select>
+        </label><br>
+        <button type="submit">✅ Crear Factura</button>
+        <a href="index.html" class="btn-back">⬅ Volver</a>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+
+<!-- ... tu contenido actual de Facturación ... -->
+
+<!-- Sección de Campos de Facturación -->
+<section class="campos">
+  <h2>📑 Campos de Facturación</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo / Ejemplo</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ID_Factura</td><td>Entero</td><td>Identificador único de la factura.</td></tr>
+      <tr><td>Folio</td><td>"F000123"</td><td>Número consecutivo para control fiscal.</td></tr>
+      <tr><td>Fecha</td><td>"2025-09-04"</td><td>Fecha de emisión.</td></tr>
+      <tr><td>Descripción</td><td>"3 cafés latte y 2 croissants"</td><td>Concepto de la venta.</td></tr>
+      <tr><td>Cantidad</td><td>5</td><td>Número total de productos facturados.</td></tr>
+      <tr><td>Importe</td><td>$300.00</td><td>Subtotal sin impuestos.</td></tr>
+      <tr><td>Impuestos</td><td>$48.00</td><td>IVA u otros impuestos aplicados.</td></tr>
+      <tr><td>Monto_Total</td><td>$348.00</td><td>Total a pagar con impuestos incluidos.</td></tr>
+      <tr><td>Método_Pago</td><td>"Efectivo", "Tarjeta"</td><td>Forma de pago.</td></tr>
+      <tr><td>ID_Cliente</td><td>(Relación)</td><td>Relación con el cliente que pidió la factura.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>© 2025 Cafetería Monkey | Proyecto académico</p>
+</footer>
+
