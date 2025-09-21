@@ -280,3 +280,56 @@ button:hover {
 .campos tr:nth-child(even) {
   background-color: #fafafa;
 }
+
+/* Animación de aparición para títulos */
+h2, h3 {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero con animación de fondo */
+.hero {
+  background: linear-gradient(270deg, var(--primary), var(--accent), var(--secondary));
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Tarjetas con efecto hover llamativo */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Botones con gradiente */
+.btn, .btn-hero {
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  transition: 0.4s;
+}
+.btn:hover, .btn-hero:hover {
+  background: linear-gradient(45deg, var(--accent), var(--primary));
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+}
+
+/* Fotos de miembros con zoom */
+.miembro img {
+  transition: transform 0.4s;
+}
+.miembro:hover img {
+  transform: scale(1.1);
+}
