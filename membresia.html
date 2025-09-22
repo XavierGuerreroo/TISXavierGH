@@ -8,14 +8,14 @@
 </head>
 <body>
   <header>
-    <h1> Subsistema: Membresía</h1>
+    <h1> Modulo: Membresía</h1>
   </header>
 
   <main>
     <section>
       <h2>Descripción</h2>
       <p>
-        El subsistema de <strong>Membresía</strong> permite gestionar los planes 
+        El modulo de <strong>Membresía</strong> permite gestionar los planes 
         de membresía de los clientes, controlando fechas de vigencia, beneficios 
         y pagos asociados.
       </p>
@@ -25,7 +25,7 @@
       <h2>Usuarios del subsistema</h2>
       <ul>
         <li><strong>Cliente</strong></li>
-        <li><strong>Propietario</strong></li>
+        <li><strong>Dueño</strong></li>
       </ul>
     </section>
 
@@ -42,7 +42,7 @@
     <li><strong>Eliminar</strong>: Dar de baja su membresía.</li>
   </ul>
 
-  <h3>Propietario</h3>
+  <h3>Dueño</h3>
   <ul>
     <li><strong>Crear</strong>: Registrar nuevas membresías.</li>
     <li><strong>Leer</strong>: Consultar membresías activas, vencidas o suspendidas.</li>
@@ -76,6 +76,16 @@
   </main>
 </body>
 </html>
+
+<!-- Imagen modelo relacional de Membresía -->
+<section class="diagram">
+  <h2>Modelo Relacional - Membresía</h2>
+  <p>
+    Diagrama que muestra la tabla <strong>Membresía</strong> y su relación con 
+    la tabla <strong>Cliente</strong>, donde cada cliente puede tener una o varias membresías.
+  </p>
+  <img src="images/Membresia_Modelo.png" alt="Modelo relacional del subsistema de Membresía">
+</section>
 
 <section class="campos">
   <h2> Campos de Membresía</h2>

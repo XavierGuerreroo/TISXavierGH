@@ -8,48 +8,59 @@
 </head>
 <body>
   <header>
-    <h1> Subsistema: Facturación</h1>
+    <h1> Modulo: Facturación</h1>
   </header>
 
   <main>
+    <!-- Descripción -->
     <section>
       <h2>Descripción</h2>
       <p>
-        El subsistema de <strong>Facturación</strong> permite registrar, consultar, 
+        El modulo de <strong>Facturación</strong> permite registrar, consultar, 
         actualizar y eliminar facturas de las ventas realizadas, garantizando un control 
-        fiscal y administrativo eficiente.
+        fiscal y administrativo eficiente. 
+        Además, gestiona los <strong>pagos múltiples</strong>, 
+        los <strong>detalles de productos</strong> y las <strong>cancelaciones</strong>, 
+        cumpliendo con los procesos de facturación electrónica requeridos en empresas grandes.
       </p>
     </section>
 
+    <!-- Usuarios -->
     <section>
       <h2>Usuarios del subsistema</h2>
       <ul>
         <li><strong>Cliente</strong></li>
-        <li><strong>Propietario</strong></li>
+        <li><strong>Dueño</strong></li>
       </ul>
     </section>
 
+    <!-- Requerimientos CRUD -->
     <section>
-  <h2>Requerimientos por usuario Facturación</h2>
+      <h2>Requerimientos por usuario - Facturación</h2>
 
-  <h3>Cliente</h3>
-  <ul>
-    <li><strong>Leer</strong>: Consultar sus facturas emitidas.</li>
-    <li><strong>Leer</strong>: Descargar facturas electrónicas certificadas en formato digital (PDF/XML), generadas y validadas mediante timbrado fiscal.</li>
-    <li><strong>Leer</strong>: Ver el método de pago de cada factura.</li>
-    <li><strong>Actualizar</strong>: Solicitar correcciones en caso de error.</li>
-  </ul>
+      <h3>Cliente</h3>
+      <ul>
+        <li><strong>Leer</strong>: Consultar sus facturas emitidas.</li>
+        <li><strong>Leer</strong>: Descargar facturas electrónicas certificadas en formato digital (PDF/XML), generadas y validadas mediante timbrado fiscal.</li>
+        <li><strong>Leer</strong>: Ver uno o varios métodos de pago de cada factura.</li>
+        <li><strong>Actualizar</strong>: Solicitar correcciones en caso de error.</li>
+        <li><strong>Eliminar</strong>: Solicitar la cancelación de una factura cuando corresponda.</li>
+      </ul>
 
-  <h3>Propietario</h3>
-  <ul>
-    <li><strong>Crear</strong>: Registrar nuevas facturas con generación electrónica y timbrado fiscal.</li>
-    <li><strong>Leer</strong>: Consultar facturas por cliente o por rango de fechas.</li>
-    <li><strong>Actualizar</strong>: Actualizar información en caso de errores.</li>
-    <li><strong>Eliminar</strong>: Cancelar facturas cuando sea necesario.</li>
-    <li><strong>Leer</strong>: Generar reportes de facturación por periodo.</li>
-    <li><strong>Crear/Leer</strong>: Almacenar facturas certificadas (con UUID, XML y PDF) y garantizar su disponibilidad para descarga por los clientes.</li>
-  </ul>
-</section>
+      <h3>Dueño</h3>
+      <ul>
+        <li><strong>Crear</strong>: Registrar nuevas facturas con generación electrónica y timbrado fiscal.</li>
+        <li><strong>Crear</strong>: Registrar los productos vendidos en <em>Detalle_Factura</em>.</li>
+        <li><strong>Crear</strong>: Registrar múltiples pagos en <em>Pago</em> cuando se usen diferentes métodos (efectivo, tarjeta, vales).</li>
+        <li><strong>Leer</strong>: Consultar facturas por cliente o por rango de fechas.</li>
+        <li><strong>Actualizar</strong>: Modificar información en caso de errores.</li>
+        <li><strong>Eliminar</strong>: Cancelar facturas cuando sea necesario, registrando el motivo en <em>Cancelacion</em>.</li>
+        <li><strong>Leer</strong>: Generar reportes de facturación por periodo y por método de pago.</li>
+        <li><strong>Crear/Leer</strong>: Almacenar facturas certificadas (con UUID, XML y PDF) y garantizar su disponibilidad para descarga por los clientes.</li>
+      </ul>
+    </section>
+
+    <!-- Formulario -->
     <section>
       <h2>Formulario - Crear Factura</h2>
       <form>
@@ -62,21 +73,24 @@
           <select>
             <option>Efectivo</option>
             <option>Tarjeta</option>
+            <option>Mixto</option>
           </select>
         </label><br>
         <button type="submit"> Crear Factura</button>
         <a href="index.html" class="btn-back">⬅ Volver</a>
       </form>
     </section>
-  </main>
-</body>
-</html>
 
-<!-- ... tu contenido actual de Facturación ... -->
+    <!-- Imagen modelo relacional de Facturación -->
+    <section class="diagram">
+      <h2>Modelo Relacional - Facturación</h2>
+      <p>Diagrama con las tablas <strong>Factura</strong>, <strong>Detalle_Factura</strong>, <strong>Pago</strong> y <strong>Cancelacion</strong>.</p>
+      <img src="images/Facturacion_Modelo.png" alt="Modelo relacional del subsistema de Facturación">
+    </section>
 
-<!-- Sección de Campos de Facturación -->
+    <!-- Campos de la tabla Factura -->
 <section class="campos">
-  <h2>Campos de Facturación</h2>
+  <h2>Campos - Factura</h2>
   <table>
     <thead>
       <tr>
@@ -94,19 +108,84 @@
       <tr><td>Importe</td><td>$300.00</td><td>Subtotal sin impuestos.</td></tr>
       <tr><td>Impuestos</td><td>$48.00</td><td>IVA u otros impuestos aplicados.</td></tr>
       <tr><td>Monto_Total</td><td>$348.00</td><td>Total a pagar con impuestos incluidos.</td></tr>
-      <tr><td>Método_Pago</td><td>"Efectivo", "Tarjeta"</td><td>Forma de pago.</td></tr>
-      <tr><td>ID_Cliente</td><td>(Relación)</td><td>Relación con el cliente que pidió la factura.</td></tr>
-      <tr><td>UUID</td><td>"550e8400-e29b-41d4-a716-446655440000"</td><td>Identificador fiscal único de la factura timbrada.</td></tr>
-      <tr><td>Archivo_XML</td><td>"facturas/F000123.xml"</td><td>Ruta o archivo digital con la factura electrónica en XML.</td></tr>
-      <tr><td>Archivo_PDF</td><td>"facturas/F000123.pdf"</td><td>Ruta o archivo digital con la representación impresa en PDF.</td></tr>
-      <tr><td>Estatus_Timbrado</td><td>"Pendiente", "Timbrada", "Cancelada"</td><td>Estado del proceso de timbrado fiscal.</td></tr>
-      <tr><td>Fecha_Timbrado</td><td>"2025-09-04 12:35:20"</td><td>Fecha y hora en que la factura fue certificada.</td></tr>
+      <tr><td>Método_Pago</td><td>"Efectivo", "Tarjeta", "Mixto"</td><td>Forma de pago.</td></tr>
+      <tr><td>ID_Cliente</td><td>(Relación)</td><td>Cliente asociado a la factura.</td></tr>
+      <tr><td>UUID</td><td>"550e8400-e29b-41d4-a716-446655440000"</td><td>Identificador fiscal único (SAT).</td></tr>
+      <tr><td>Archivo_XML</td><td>"facturas/F000123.xml"</td><td>Archivo digital XML de la factura.</td></tr>
+      <tr><td>Archivo_PDF</td><td>"facturas/F000123.pdf"</td><td>Archivo digital PDF de la factura.</td></tr>
+      <tr><td>Estatus_Timbrado</td><td>"Pendiente", "Timbrada", "Cancelada"</td><td>Estado de timbrado fiscal.</td></tr>
+      <tr><td>Fecha_Timbrado</td><td>"2025-09-04 12:35:20"</td><td>Fecha de certificación.</td></tr>
     </tbody>
   </table>
 </section>
 
-<footer>
-  <p>© 2025 Cafetería Monkey | Proyecto académico</p>
-</footer>
+<!-- Campos de la tabla Detalle_Factura -->
+<section class="campos">
+  <h2>Campos - Detalle_Factura</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo / Ejemplo</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ID_Detalle</td><td>Entero</td><td>Identificador único del detalle.</td></tr>
+      <tr><td>ID_Factura</td><td>(Relación)</td><td>Factura a la que pertenece el detalle.</td></tr>
+      <tr><td>Producto</td><td>"Café Latte"</td><td>Nombre del producto.</td></tr>
+      <tr><td>Cantidad</td><td>2</td><td>Unidades del producto.</td></tr>
+      <tr><td>Precio_Unitario</td><td>$60.00</td><td>Precio por unidad.</td></tr>
+      <tr><td>Subtotal</td><td>$120.00</td><td>Total de ese producto.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Campos de la tabla Pago -->
+<section class="campos">
+  <h2>Campos - Pago</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo / Ejemplo</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ID_Pago</td><td>Entero</td><td>Identificador único del pago.</td></tr>
+      <tr><td>ID_Factura</td><td>(Relación)</td><td>Factura asociada al pago.</td></tr>
+      <tr><td>Método_Pago</td><td>"Efectivo", "Tarjeta"</td><td>Forma de pago utilizada.</td></tr>
+      <tr><td>Monto</td><td>$500.00</td><td>Cantidad pagada con ese método.</td></tr>
+      <tr><td>Fecha_Pago</td><td>"2025-09-22"</td><td>Fecha y hora del pago.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Campos de la tabla Cancelacion -->
+<section class="campos">
+  <h2>Campos - Cancelacion</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo / Ejemplo</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ID_Cancelacion</td><td>Entero</td><td>Identificador único de la cancelación.</td></tr>
+      <tr><td>ID_Factura</td><td>(Relación)</td><td>Factura cancelada.</td></tr>
+      <tr><td>Motivo</td><td>"Error en datos"</td><td>Razón de la cancelación.</td></tr>
+      <tr><td>Fecha_Cancelacion</td><td>"2025-09-22"</td><td>Fecha de cancelación.</td></tr>
+      <tr><td>Estatus</td><td>"Cancelada"</td><td>Estado de la factura.</td></tr>
+    </tbody>
+  </table>
+</section>
 
 
+  <footer>
+    <p>© 2025 Cafetería Monky | Proyecto enfocado en Taller de ingeniería de software</p>
+  </footer>
+</body>
+</html>

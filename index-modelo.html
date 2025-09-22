@@ -11,7 +11,12 @@
   <header class="hero">
     <div class="hero-content">
       <h1> Modelo Relacional</h1>
-      <p>Relaciones entre los módulos de <strong>Facturación</strong> y <strong>Membresía</strong></p>
+      <p>
+        Relaciones entre los módulos de <strong>Facturación</strong> y 
+        <strong>Membresía</strong>, incluyendo las tablas de 
+        <em>Cliente</em>, <em>Factura</em>, <em>Detalle_Factura</em>, 
+        <em>Pago</em> y <em>Cancelación</em>.
+      </p>
       <a href="index.html" class="btn btn-hero">⬅ Volver al inicio</a>
     </div>
   </header>
@@ -20,21 +25,21 @@
     <!-- Explicación -->
     <section class="alt-section">
       <div class="text">
-        <h2>📌 ¿Qué es el modelo relacional?</h2>
+        <h2>¿Qué es el modelo relacional?</h2>
         <p>
           El modelo relacional describe cómo las tablas de la base de datos de 
-          la <strong>Cafetería Monkey</strong> están interconectadas entre los 
+          la <strong>Cafetería Monky</strong> están interconectadas entre los 
           subsistemas de <em>Facturación</em> y <em>Membresía</em>.
         </p>
         <p>
           Permite entender de forma visual cómo se gestionan los 
-          <strong>clientes</strong>, <strong>membresías</strong> y 
-          <strong>facturas</strong>, mostrando las llaves primarias y foráneas 
-          que vinculan la información.
+          <strong>clientes</strong>, sus <strong>membresías</strong> y las 
+          <strong>facturas</strong> con sus detalles, pagos y cancelaciones, 
+          mostrando las llaves primarias y foráneas que vinculan la información.
         </p>
       </div>
       <div class="image">
-        <img src="images/nuevo modelo relacional.png" alt="Modelo relacional de Facturación y Membresía">
+        <img src="images/ModeloRelacionalNew.png" alt="Modelo relacional completo de Facturación y Membresía">
       </div>
     </section>
 
@@ -43,23 +48,35 @@
       <h2> Tablas principales</h2>
       <div class="cards">
         <div class="card">
-          <h3>👤 Clientes</h3>
-          <p>Contiene la información básica de los clientes: nombre, correo, estado.</p>
+          <h3>👤 Cliente</h3>
+          <p>Contiene la información básica de cada cliente: nombre, correo y teléfono.</p>
         </div>
         <div class="card">
-          <h3> Membresías</h3>
-          <p>Registra el tipo de membresía, fechas de inicio y vencimiento, y beneficios asociados.</p>
+          <h3>Membresía</h3>
+          <p>Registra el tipo de membresía, fechas de inicio y vencimiento, estado, historial de pagos y beneficios asociados.</p>
         </div>
         <div class="card">
-          <h3> Facturas</h3>
-          <p>Guarda los registros de compras, método de pago, importe y cliente asociado.</p>
+          <h3>Factura</h3>
+          <p>Guarda los registros de ventas: folio, fecha, importe, método de pago, timbrado fiscal y relación con el cliente.</p>
+        </div>
+        <div class="card">
+          <h3>Detalle_Factura</h3>
+          <p>Desglosa los productos o servicios de cada factura, con cantidad, precio unitario y subtotal.</p>
+        </div>
+        <div class="card">
+          <h3>Pago</h3>
+          <p>Permite registrar múltiples métodos de pago para una misma factura, como efectivo, tarjeta o vales.</p>
+        </div>
+        <div class="card">
+          <h3>Cancelación</h3>
+          <p>Almacena la información de facturas canceladas: motivo, fecha y estado.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Cafetería Monkey | Proyecto académico</p>
+    <p>© 2025 Cafetería Monky | Proyecto enfocado en Taller de ingeniería de software</p>
   </footer>
 </body>
 </html>
