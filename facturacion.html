@@ -35,30 +35,32 @@
     </section>
 
     <!-- Requerimientos CRUD -->
-    <section>
-      <h2>Requerimientos por usuario - Facturación</h2>
+<section>
+  <h2>Requerimientos por usuario - Facturación</h2>
 
-      <h3>Cliente</h3>
-      <ul>
-        <li><strong>Leer</strong>: Consultar sus facturas emitidas.</li>
-        <li><strong>Leer</strong>: Descargar facturas electrónicas certificadas en formato digital (PDF/XML), generadas y validadas mediante timbrado fiscal.</li>
-        <li><strong>Leer</strong>: Ver uno o varios métodos de pago de cada factura.</li>
-        <li><strong>Actualizar</strong>: Solicitar correcciones en caso de error.</li>
-        <li><strong>Eliminar</strong>: Solicitar la cancelación de una factura cuando corresponda.</li>
-      </ul>
+  <h3>Cliente</h3>
+  <ul>
+    <li><strong>Leer</strong>: Consultar sus facturas emitidas.</li>
+    <li><strong>Leer</strong>: Descargar facturas electrónicas certificadas en formato digital (PDF/XML), generadas y validadas mediante timbrado fiscal.</li>
+    <li><strong>Leer</strong>: Ver uno o varios métodos de pago de cada factura.</li>
+    <li><strong>Leer</strong>: Visualizar los productos adquiridos de la <em>Carta</em> dentro de su factura.</li>
+    <li><strong>Actualizar</strong>: Solicitar correcciones en caso de error.</li>
+    <li><strong>Eliminar</strong>: Solicitar la cancelación de una factura cuando corresponda.</li>
+  </ul>
 
-      <h3>Dueño</h3>
-      <ul>
-        <li><strong>Crear</strong>: Registrar nuevas facturas con generación electrónica y timbrado fiscal.</li>
-        <li><strong>Crear</strong>: Registrar los productos vendidos en <em>Detalle_Factura</em>.</li>
-        <li><strong>Crear</strong>: Registrar múltiples pagos en <em>Pago</em> cuando se usen diferentes métodos (efectivo, tarjeta, vales).</li>
-        <li><strong>Leer</strong>: Consultar facturas por cliente o por rango de fechas.</li>
-        <li><strong>Actualizar</strong>: Modificar información en caso de errores.</li>
-        <li><strong>Eliminar</strong>: Cancelar facturas cuando sea necesario, registrando el motivo en <em>Cancelacion</em>.</li>
-        <li><strong>Leer</strong>: Generar reportes de facturación por periodo y por método de pago.</li>
-        <li><strong>Crear/Leer</strong>: Almacenar facturas certificadas (con UUID, XML y PDF) y garantizar su disponibilidad para descarga por los clientes.</li>
-      </ul>
-    </section>
+  <h3>Dueño</h3>
+  <ul>
+    <li><strong>Crear</strong>: Registrar nuevas facturas con generación electrónica y timbrado fiscal.</li>
+    <li><strong>Crear</strong>: Registrar los productos vendidos en <em>Detalle_Factura</em>, asociados a la <em>Carta</em>.</li>
+    <li><strong>Crear</strong>: Registrar múltiples pagos en <em>Pago</em> cuando se usen diferentes métodos (efectivo, tarjeta, vales).</li>
+    <li><strong>Leer</strong>: Consultar facturas por cliente o por rango de fechas.</li>
+    <li><strong>Leer</strong>: Consultar qué productos de la <em>Carta</em> son más vendidos.</li>
+    <li><strong>Actualizar</strong>: Modificar información en caso de errores.</li>
+    <li><strong>Eliminar</strong>: Cancelar facturas cuando sea necesario, registrando el motivo en <em>Cancelacion</em>.</li>
+    <li><strong>Leer</strong>: Generar reportes de facturación por periodo, por método de pago y por producto de la <em>Carta</em>.</li>
+    <li><strong>Crear/Leer</strong>: Almacenar facturas certificadas (con UUID, XML y PDF) y garantizar su disponibilidad para descarga por los clientes.</li>
+  </ul>
+</section>
 
     <!-- Formulario -->
     <section>
@@ -85,7 +87,7 @@
     <section class="diagram">
       <h2>Modelo Relacional - Facturación</h2>
       <p>Diagrama con las tablas <strong>Factura</strong>, <strong>Detalle_Factura</strong>, <strong>Pago</strong> y <strong>Cancelacion</strong>.</p>
-      <img src="images/Facturacion_Modelo.png" alt="Modelo relacional del subsistema de Facturación">
+      <img src="images/VERDADEROFACTURACION.png" alt="Modelo relacional del subsistema de Facturación">
     </section>
 
     <!-- Campos de la tabla Factura -->
@@ -182,6 +184,28 @@
     </tbody>
   </table>
 </section>
+
+
+<!-- Campos de la tabla Carta -->
+<section class="campos">
+  <h2>Campos - Carta</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo / Ejemplo</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ID_Carta</td><td>Entero</td><td>Identificador único del producto en la carta.</td></tr>
+      <tr><td>Nombre</td><td>"Café Latte"</td><td>Nombre del producto o platillo ofrecido.</td></tr>
+      <tr><td>Descripción</td><td>"Café espresso con leche espumosa"</td><td>Detalles o notas del producto.</td></tr>
+      <tr><td>Precio</td><td>$60.00</td><td>Costo unitario del producto en la carta.</td></tr>
+    </tbody>
+  </table>
+</section>
+
 
 
   <footer>

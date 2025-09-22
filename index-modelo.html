@@ -15,7 +15,7 @@
         Relaciones entre los módulos de <strong>Facturación</strong> y 
         <strong>Membresía</strong>, incluyendo las tablas de 
         <em>Cliente</em>, <em>Factura</em>, <em>Detalle_Factura</em>, 
-        <em>Pago</em> y <em>Cancelación</em>.
+        <em>Pago</em>, <em>Carta</em>y <em>Cancelación</em>.
       </p>
       <a href="index.html" class="btn btn-hero">⬅ Volver al inicio</a>
     </div>
@@ -39,41 +39,45 @@
         </p>
       </div>
       <div class="image">
-        <img src="images/ModeloRelacionalNew.png" alt="Modelo relacional completo de Facturación y Membresía">
+        <img src="images/VERDADEROMODELO.png" alt="Modelo relacional completo de Facturación y Membresía">
       </div>
     </section>
 
     <!-- Descripción de tablas -->
-    <section class="subsistemas">
-      <h2> Tablas principales</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>👤 Cliente</h3>
-          <p>Contiene la información básica de cada cliente: nombre, correo y teléfono.</p>
-        </div>
-        <div class="card">
-          <h3>Membresía</h3>
-          <p>Registra el tipo de membresía, fechas de inicio y vencimiento, estado, historial de pagos y beneficios asociados.</p>
-        </div>
-        <div class="card">
-          <h3>Factura</h3>
-          <p>Guarda los registros de ventas: folio, fecha, importe, método de pago, timbrado fiscal y relación con el cliente.</p>
-        </div>
-        <div class="card">
-          <h3>Detalle_Factura</h3>
-          <p>Desglosa los productos o servicios de cada factura, con cantidad, precio unitario y subtotal.</p>
-        </div>
-        <div class="card">
-          <h3>Pago</h3>
-          <p>Permite registrar múltiples métodos de pago para una misma factura, como efectivo, tarjeta o vales.</p>
-        </div>
-        <div class="card">
-          <h3>Cancelación</h3>
-          <p>Almacena la información de facturas canceladas: motivo, fecha y estado.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+<section class="subsistemas">
+  <h2> Tablas principales</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>👤 Cliente</h3>
+      <p>Contiene la información básica de cada cliente: nombre, correo y teléfono.</p>
+    </div>
+    <div class="card">
+      <h3>Membresía</h3>
+      <p>Registra el tipo de membresía, fechas de inicio y vencimiento, estado, historial de pagos y beneficios asociados.</p>
+    </div>
+    <div class="card">
+      <h3>Factura</h3>
+      <p>Guarda los registros de ventas: folio, fecha, importe, método de pago, timbrado fiscal y relación con el cliente.</p>
+    </div>
+    <div class="card">
+      <h3>Detalle_Factura</h3>
+      <p>Desglosa los productos vendidos en cada factura, vinculando la <strong>Carta</strong> con la cantidad, precio unitario y subtotal.</p>
+    </div>
+    <div class="card">
+      <h3>Pago</h3>
+      <p>Permite registrar múltiples métodos de pago para una misma factura, como efectivo, tarjeta o vales.</p>
+    </div>
+    <div class="card">
+      <h3>Cancelación</h3>
+      <p>Almacena la información de facturas canceladas: motivo, fecha y estado.</p>
+    </div>
+    <div class="card">
+      <h3>Carta</h3>
+      <p>Catálogo de productos de la cafetería: cada ítem tiene un nombre, descripción y precio. Se conecta con <em>Detalle_Factura</em> para registrar las ventas.</p>
+    </div>
+  </div>
+</section>
+
 
   <footer>
     <p>© 2025 Cafetería Monky | Proyecto enfocado en Taller de ingeniería de software</p>
