@@ -29,29 +29,60 @@
       </ul>
     </section>
 
-    <section>
-  <h2>Requerimientos por usuario Membresía</h2>
+  <!-- Requerimientos por usuario - Membresía -->
+<section>
+  <h2>Requerimientos por usuario - Membresía</h2>
 
   <h3>Cliente</h3>
+  <p>El cliente debe ser capaz de:</p>
   <ul>
-    <li><strong>Crear</strong>: Registrarse en un plan de membresía.</li>
-    <li><strong>Leer</strong>: Consultar estado de la membresía (Activa, Expirada, Suspendida).</li>
-    <li><strong>Leer</strong>: Ver fechas de inicio y vencimiento.</li>
-    <li><strong>Leer</strong>: Consultar historial de pagos.</li>
-    <li><strong>Leer</strong>: Conocer beneficios asociados.</li>
-    <li><strong>Eliminar</strong>: Dar de baja su membresía.</li>
+    <li>Contratar una nueva membresía proporcionando la siguiente información:
+      <ul>
+        <li>Nombre</li>
+        <li>ID_Cliente</li>
+      </ul>
+    </li>
+    <li>Consultar los detalles de su membresía activa, visualizando:
+      <ul>
+        <li>Costo del plan</li>
+        <li>Fecha de inicio</li>
+        <li>Fecha de vencimiento</li>
+      </ul>
+    </li>
+    <li>Visualizar el estado actual de su membresía, con la siguiente información:
+      <ul>
+        <li>Estado (Activa, Suspendida o Vencida)</li>
+        <li>Tipo de membresía contratada</li>
+      </ul>
+    </li>
+    <li>Acceder al historial de pagos y beneficios asociados al plan contratado.</li>
   </ul>
 
   <h3>Dueño</h3>
+  <p>El dueño debe ser capaz de:</p>
   <ul>
-    <li><strong>Crear</strong>: Registrar nuevas membresías.</li>
-    <li><strong>Leer</strong>: Consultar membresías activas, vencidas o suspendidas.</li>
-    <li><strong>Actualizar</strong>: Modificar tipo, beneficios, fechas o estado de la membresía.</li>
-    <li><strong>Actualizar</strong>: Registrar fecha de última actividad de un cliente.</li>
-    <li><strong>Eliminar</strong>: Eliminar membresías dadas de baja.</li>
-    <li><strong>Leer</strong>: Generar reportes de membresías y clientes activos.</li>
+    <li>Registrar nuevas membresías asociadas a clientes existentes, capturando:
+      <ul>
+        <li>ID_Cliente</li>
+        <li>Tipo de membresía</li>
+        <li>Costo</li>
+        <li>Fecha de inicio</li>
+        <li>Fecha de vencimiento</li>
+      </ul>
+    </li>
+    <li>Visualizar todas las membresías registradas con detalles como:
+      <ul>
+        <li>ID_Cliente y nombre del cliente</li>
+        <li>Estado de la membresía</li>
+        <li>Fecha de inicio y vencimiento</li>
+        <li>Costo y tipo de plan</li>
+      </ul>
+    </li>
+    <li>Generar reportes con información sobre usuarios activos, planes más contratados y fechas de renovación próximas.</li>
   </ul>
 </section>
+
+
 
 
     <section>

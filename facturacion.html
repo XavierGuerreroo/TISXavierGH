@@ -34,33 +34,72 @@
       </ul>
     </section>
 
-    <!-- Requerimientos CRUD -->
+   <!-- Requerimientos por usuario - Facturación -->
+<!-- Requerimientos por usuario - Facturación -->
 <section>
   <h2>Requerimientos por usuario - Facturación</h2>
 
   <h3>Cliente</h3>
+  <p>El cliente debe ser capaz de:</p>
   <ul>
-    <li><strong>Leer</strong>: Consultar sus facturas emitidas.</li>
-    <li><strong>Leer</strong>: Descargar facturas electrónicas certificadas en formato digital (PDF/XML), generadas y validadas mediante timbrado fiscal.</li>
-    <li><strong>Leer</strong>: Ver uno o varios métodos de pago de cada factura.</li>
-    <li><strong>Leer</strong>: Visualizar los productos adquiridos de la <em>Carta</em> dentro de su factura.</li>
-    <li><strong>Actualizar</strong>: Solicitar correcciones en caso de error.</li>
-    <li><strong>Eliminar</strong>: Solicitar la cancelación de una factura cuando corresponda.</li>
+    <li>Registrar una nueva solicitud de factura electrónica proporcionando:
+      <ul>
+        <li>Nombre</li>
+        <li>RFC</li>
+        <li>Uso de factura</li>
+        <li>Tipo de pago</li>
+        <li>Correo electrónico</li>
+      </ul>
+    </li>
+    <li>Solicitar la corrección de una factura emitida, indicando el motivo de la modificación.</li>
+    <li>Visualizar sus facturas electrónicas emitidas, consultando información relevante como:
+      <ul>
+        <li>Fecha de emisión</li>
+        <li>Número de folio</li>
+        <li>ID o número de cliente</li>
+        <li>Importe total</li>
+        <li>Método de pago utilizado</li>
+      </ul>
+    </li>
+    <li>Visualizar los productos adquiridos en la factura desde la tabla <em>Carta</em>.</li>
   </ul>
 
   <h3>Dueño</h3>
+  <p>El dueño debe ser capaz de:</p>
   <ul>
-    <li><strong>Crear</strong>: Registrar nuevas facturas con generación electrónica y timbrado fiscal.</li>
-    <li><strong>Crear</strong>: Registrar los productos vendidos en <em>Detalle_Factura</em>, asociados a la <em>Carta</em>.</li>
-    <li><strong>Crear</strong>: Registrar múltiples pagos en <em>Pago</em> cuando se usen diferentes métodos (efectivo, tarjeta, vales).</li>
-    <li><strong>Leer</strong>: Consultar facturas por cliente o por rango de fechas.</li>
-    <li><strong>Leer</strong>: Consultar qué productos de la <em>Carta</em> son más vendidos.</li>
-    <li><strong>Actualizar</strong>: Modificar información en caso de errores.</li>
-    <li><strong>Eliminar</strong>: Cancelar facturas cuando sea necesario, registrando el motivo en <em>Cancelacion</em>.</li>
-    <li><strong>Leer</strong>: Generar reportes de facturación por periodo, por método de pago y por producto de la <em>Carta</em>.</li>
-    <li><strong>Crear/Leer</strong>: Almacenar facturas certificadas (con UUID, XML y PDF) y garantizar su disponibilidad para descarga por los clientes.</li>
+    <li>Emitir nuevas facturas electrónicas siguiendo el proceso fiscal completo:
+      <ul>
+        <li><strong>Generación:</strong> El sistema crea la factura con datos del cliente, productos y montos.</li>
+        <li><strong>Validación:</strong> Se verifica que la estructura cumpla con las reglas del SAT.</li>
+        <li><strong>Timbrado:</strong> El comprobante se envía al PAC para obtener el sello digital y el UUID.</li>
+        <li><strong>Almacenamiento:</strong> El sistema guarda automáticamente el archivo XML y PDF.</li>
+        <li><strong>Disponibilidad:</strong> El cliente puede descargar sus facturas en cualquier momento.</li>
+      </ul>
+    </li>
+    <li>Corregir facturas emitidas en caso de errores detectados.</li>
+    <li>Cancelar facturas cuando sea necesario, registrando:
+      <ul>
+        <li>ID del cliente</li>
+        <li>Nombre</li>
+        <li>Fecha de cancelación</li>
+        <li>Motivo</li>
+      </ul>
+    </li>
+    <li>Visualizar las facturas emitidas, accediendo a información clave como:
+      <ul>
+        <li>Folio fiscal</li>
+        <li>Fecha de emisión</li>
+        <li>Cliente asociado (ID y nombre)</li>
+        <li>Importe total</li>
+        <li>Método de pago</li>
+        <li>Estado del timbrado (pendiente, timbrada o cancelada)</li>
+      </ul>
+    </li>
+    <li>Consultar facturas por cliente, rango de fechas o folio fiscal.</li>
+    <li>Generar reportes de facturación por periodo, método de pago o producto.</li>
   </ul>
 </section>
+
 
     <!-- Formulario -->
     <section>
